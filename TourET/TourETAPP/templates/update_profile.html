@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+{% include 'head.html' %}
+<body>
+{% include 'register_header.html' %}
+
+
+    <h1>Update Profile</h1>
+    <form method="post" enctype="multipart/form-data" action="{% url 'update_profile' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+
+
+{% include 'footer.html' %}
+</body>
+{% include 'scripts.html' %}
+
+</html>

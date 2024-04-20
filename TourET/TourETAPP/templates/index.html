@@ -1,0 +1,183 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'head.html' %}
+
+<body>
+
+    {% include 'header.html' %}
+
+    <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+        <div class="container py-5">
+            <div class="row justify-content-center py-5">
+                <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">Where would you like to go?</h1>
+                    <p class="fs-4 text-white mb-4 animated slideInDown">Enhance your traveling experience with us!</p>
+                </div>
+            </div>
+            <div class="position-relative w-75 mx-auto animated slideInDown">
+                <form method="GET" action="{% url 'packages' %}">
+                    <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="search" name="destination" placeholder="Eg: Thailand" value="{{ search_query }}">
+                    <button type="submit" class="btn btn-primary rounded-pill py-2 px-4 position-absolute top-0 end-0 me-2" style="margin-top: 7px;">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar & Hero End -->
+
+    <!-- About Start -->
+    <section id="About">
+        <div class="container-xxl mb-3 py-5">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                        <div class="position-relative h-100">
+                            <img class="img-fluid position-absolute w-100 h-100" src="{% static 'img/about.jpg' %}" alt="" style="object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <h6 class="section-title bg-white text-start text-primary pe-3 ">About Us</h6>
+                        <h1 class="mb-4 ">Welcome to <span class="text-primary ">TourET</span></h1>
+                        <p class="mb-4 ">Founded in 2021, TourET was born out of a shared love for travel and a desire to share the beauty of the world with fellow wanderers. What started as a small group of friends exploring hidden gems has now evolved into a full-fledged
+                            travel guide company, catering to the wanderlust of individuals and groups from all walks of life.</p>
+                        <p class="mb-4 ">Our offers:</p>
+                        <div class="row gy-2 gx-4 mb-4 ">
+                            <div class="col-sm-6 ">
+                                <p class="mb-0 "><i class="fa fa-arrow-right text-primary me-2 "></i>First Class Flights</p>
+                            </div>
+                            <div class="col-sm-6 ">
+                                <p class="mb-0 "><i class="fa fa-arrow-right text-primary me-2 "></i>Handpicked Hotels</p>
+                            </div>
+                            <div class="col-sm-6 ">
+                                <p class="mb-0 "><i class="fa fa-arrow-right text-primary me-2 "></i>5 Star Accommodations</p>
+                            </div>
+                            <div class="col-sm-6 ">
+                                <p class="mb-0 "><i class="fa fa-arrow-right text-primary me-2 "></i>Latest Model Vehicles</p>
+                            </div>
+                            <div class="col-sm-6 ">
+                                <p class="mb-0 "><i class="fa fa-arrow-right text-primary me-2 "></i>150 Premium City Tours</p>
+                            </div>
+                            <div class="col-sm-6 ">
+                                <p class="mb-0 "><i class="fa fa-arrow-right text-primary me-2 "></i>24/7 Service</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About End -->
+
+
+    <!-- Service Start -->
+    <section id="Services">
+        <div class="container-xxl py-5 ">
+            <div class="container ">
+                <div class="text-center wow fadeInUp " data-wow-delay="0.1s ">
+                    <h6 class="section-title bg-white text-center text-primary px-3 ">Services</h6>
+                    <h1 class="mb-5 ">Our Services</h1>
+                </div>
+                <div class="row g-4 ">
+                    <div class="col-lg-4 col-sm-6 wow fadeInUp " data-wow-delay="0.1s ">
+                        <div class="service-item rounded pt-3 ">
+                            <div class="p-4 ">
+                                <i class="fa fa-3x fa-globe text-primary mb-4 "></i>
+                                <h5>WorldWide Tours</h5>
+                                <p>Our partners abroad will set up your personalized tours.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 wow fadeInUp " data-wow-delay="0.3s ">
+                        <div class="service-item rounded pt-3 ">
+                            <div class="p-4 ">
+                                <i class="fa fa-3x fa-hotel text-primary mb-4 "></i>
+                                <h5>Hotel Reservation</h5>
+                                <p>WorldWide hote reservations.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 wow fadeInUp " data-wow-delay="0.5s ">
+                        <div class="service-item rounded pt-3 ">
+                            <div class="p-4 ">
+                                <i class="fa fa-3x fa-user text-primary mb-4 "></i>
+                                <h5>Travel Guides</h5>
+                                <p>Our platform will give you personalized guides on where to travel.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service End -->
+
+    <!-- Destination Start -->
+
+    <!-- Destination Start -->
+
+
+
+
+
+    <!-- Process Start -->
+    <div class="container-xxl py-5 ">
+        <div class="container ">
+            <div class="text-center pb-4 wow fadeInUp " data-wow-delay="0.1s ">
+                <h6 class="section-title bg-white text-center text-primary px-3 ">Process</h6>
+                <h1 class="mb-5 ">3 Easy Steps</h1>
+            </div>
+            <div class="row gy-5 gx-4 justify-content-center ">
+                <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp " data-wow-delay="0.1s ">
+                    <div class="position-relative border border-primary pt-5 pb-4 px-4 ">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle position-absolute top-0 start-50 translate-middle shadow " style="width: 100px; height: 100px; ">
+                            <i class="fa fa-globe fa-3x text-white "></i>
+                        </div>
+                        <h5 class="mt-4 ">Choose A Destination</h5>
+                        <hr class="w-25 mx-auto bg-primary mb-1 ">
+                        <hr class="w-50 mx-auto bg-primary mt-0 ">
+                        <p class="mb-0 ">Our platform will guide you through our top destination picks with a personal touch.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp " data-wow-delay="0.3s ">
+                    <div class="position-relative border border-primary pt-5 pb-4 px-4 ">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle position-absolute top-0 start-50 translate-middle shadow " style="width: 100px; height: 100px; ">
+                            <i class="fa fa-dollar-sign fa-3x text-white "></i>
+                        </div>
+                        <h5 class="mt-4 ">Pay Online</h5>
+                        <hr class="w-25 mx-auto bg-primary mb-1 ">
+                        <hr class="w-50 mx-auto bg-primary mt-0 ">
+                        <p class="mb-0 ">You can pay and book through our integrated payment Systems.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp " data-wow-delay="0.5s ">
+                    <div class="position-relative border border-primary pt-5 pb-4 px-4 ">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle position-absolute top-0 start-50 translate-middle shadow " style="width: 100px; height: 100px; ">
+                            <i class="fa fa-plane fa-3x text-white "></i>
+                        </div>
+                        <h5 class="mt-4 ">Fly Today</h5>
+                        <hr class="w-25 mx-auto bg-primary mb-1 ">
+                        <hr class="w-50 mx-auto bg-primary mt-0 ">
+                        <p class="mb-0 ">Book your flights through our platform and enjoy the many options we offer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Process Start -->
+
+
+
+
+
+
+    {% include 'footer.html' %}
+</body>
+{% include 'scripts.html' %}
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'admin-head.html' %}
+<script src="https://code.highcharts.com/highcharts.js"></script>
+
+<body class="sb-nav-fixed">
+    {% include 'admin-header.html' %}
+    <div class="sb-sidenav-footer">
+        <div class="small">Logged in as:</div>
+        {{request.user.username}}
+    </div>
+    </nav>
+    </div>
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">Dashboard</h1>
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item active">Admin Acess</li>
+                </ol>
+                <div class="row">
+                    <div class="col-xl-4 col-md-6">
+                        <div class="card bg-primary text-white mb-4"><br>
+                            <h5 class="text-center">Total Users</h5>
+                            <div class="card-body">{{ total_num_users }}</div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6">
+                        <div class="card bg-primary text-white mb-4"><br>
+                            <h5 class="text-center">Total Package</h5>
+                            <div class="card-body">{{ total_packages }}</div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6">
+                        <div class="card bg-primary text-white mb-4"><br>
+                            <h5 class="text-center">Total Destination </h5>
+                            <div class="card-body">{{ total_destination }}</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="chartContainer" style="width: 1000px; height: 400px;"></div>
+            </div>
+        </main>
+        {% include 'admin-footer.html' %}
+    </div>
+    </div>
+
+
+</body>
+{% include 'admin-scripts.html' %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('/get_statistics/') // Assuming you have a Django view mapped to '/get_statistics/' that returns the statistics data
+            .then(response => response.json())
+            .then(data => {
+                var chartData = [{
+                    name: 'Users',
+                    y: data.total_num_users,
+                    color: 'blue'
+                }, {
+                    name: 'Packages',
+                    y: data.total_packages,
+                    color: 'green'
+                }, {
+                    name: 'Destinations',
+                    y: data.total_destination,
+                    color: 'orange'
+                }];
+
+                var chart = Highcharts.chart('chartContainer', {
+                    chart: {
+                        type: 'column'
+                    },
+                    title: {
+                        text: 'Statistics'
+                    },
+                    xAxis: {
+                        categories: ['']
+                    },
+                    series: [{
+                        name: 'Count',
+                        data: chartData
+                    }]
+                });
+            });
+    });
+</script>
+
+</html>

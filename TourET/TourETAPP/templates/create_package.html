@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+{% include 'head.html' %}
+
+<body>
+
+    {% include 'register_header.html' %} {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+    </ul>
+    {% endif %}
+    <h2 style="text-align: center;">Package Form</h2>
+    <div class="container">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mb-3">
+                {{ form.name }}
+            </div>
+            <div class="mb-3">
+                {{ form.person }}
+            </div>
+            <div class="mb-3">
+                {{ form.days }}
+            </div>
+            <div class="mb-3">
+                {{ form.price }}
+            </div>
+            <div class="mb-3">
+                {{ form.description }}
+            </div>
+            <div class="mb-3">
+                {{ form.package_pic }}
+            </div>
+            <button type="submit" class="btn btn-primary">Create Package</button>
+        </form>
+    </div>
+    {% include 'footer.html' %}
+</body>
+{% include 'scripts.html' %}
+
+</html>
